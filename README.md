@@ -1,14 +1,12 @@
 # This is implementation code for FR-Net
 
-Requirements
-____________
+    1. Requirements
 
 We sugget to use the Conda to set the environment.  
-1.Tensorflow > 2.6  
-2.GDAL
+a.Tensorflow > 2.6  
+b.GDAL
 
+    
 
-
-Run
-____________
+    2.Run
 ```python shuidao.py```
