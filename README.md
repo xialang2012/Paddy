@@ -1,4 +1,4 @@
-# This is implementation code for FR-Net
+# Implementation of FR-Net
 
     1. Requirements
 
