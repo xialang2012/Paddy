@@ -27,16 +27,7 @@ from tensorflow.keras.callbacks import TensorBoard
 import random
 from tensorflow.keras.models import load_model
 
-from lib.unetV2 import *
-from lib.cloudnet import *
 from lib.FRNetTestCopy import *
-from lib.HRNetTest import *
-from lib.deeplabv3plus import DeeplabV3_plus
-from lib.segnet import Segnet
-from lib.frrn import *
-from lib.hrnetnew import *
-from lib.tools import *
-from lib.rsnet import rsnet
 
 # number of class type
 n_label = 1
@@ -270,19 +261,7 @@ class RiceTrain():
         checkpoint = ModelCheckpoint(filepath=filepath, monitor='val_loss', verbose=1, save_best_only=True)
 
         # prepare model  
-        if modelName == 'seg_frnet_v2_FulC': model = seg_frnet_v2_FulC(batch_size, pixelSize, pixelSize, bands, n_label)
         if modelName == 'frnet_v2': model = seg_frnet_v2(batch_size, pixelSize, pixelSize, bands, n_label)
-        if modelName == 'frnet_v2_test': model = seg_frnet_v2_test(batch_size, pixelSize, pixelSize, bands, n_label)
-        if modelName == 'unet': model = unetPure((pixelSize, pixelSize, bands), n_label)
-        if modelName == 'segnet': model = Segnet((pixelSize, pixelSize, bands), n_label)
-        if modelName == 'cloudnet': model = cloudNet((pixelSize, pixelSize, bands), n_label)
-        if modelName == 'frrn': 
-            frrn = frrnBuilder()
-            model = frrn.build_FRRN_A((pixelSize, pixelSize, bands), n_label)
-
-        if modelName == 'deeplabv3p': model = DeeplabV3_plus((pixelSize, pixelSize, bands), n_label)
-        if modelName == 'rsnet': model = rsnet((pixelSize, pixelSize, bands), n_label)
-        if modelName == 'hrnet': model = HRNetNew((pixelSize, pixelSize, bands), n_label)
         
         #model.compile(optimizer = 'Adam', loss = 'binary_crossentropy', metrics=['binary_accuracy', f1_m, precision_m, recall_m])
         model.compile(optimizer = 'Adam', loss = dice_coef_loss, metrics=['binary_accuracy', f1_m, precision_m, recall_m])
@@ -345,14 +324,8 @@ if __name__ == '__main__':
     # location where to save the trained model file
     modelSavePath = r''
     
-    # some examples to train the model, some models are provides for references, U-Net, RSNet, SegNet, HRNet, FRRN and DeepLabV3+
-    #riceTrain.TrainPaddyModel(inPath, modelSavePath, 'unet', epochs=80, batch_size=8, bands=8)
+    # some examples to train the model
     riceTrain.TrainPaddyModel(inPath, modelSavePath, 'frnet_v2', epochs=80, batch_size=8, bands=5)
-    #riceTrain.TrainPaddyModel(inPath, modelSavePath, 'rsnet', epochs=80, batch_size=8, bands=4)
-    #riceTrain.TrainPaddyModel(inPath, modelSavePath, 'segnet', epochs=80, batch_size=8, bands=5)
-    #riceTrain.TrainPaddyModel(inPath, modelSavePath, 'hrnet', epochs=80, batch_size=8, bands=5)
-    #riceTrain.TrainPaddyModel(inPath, modelSavePath, 'frrn', epochs=80, batch_size=8, bands=5)
-    #riceTrain.TrainPaddyModel(inPath, modelSavePath, 'deeplabv3p', epochs=70, batch_size=8, bands=5)
 
     # an example to predict
     inFiles = [r'E:\shuidao\yangben\sd-data\stack\LC08_L1TP_114028_20140601_20170422_01_T1_Train.tif',
