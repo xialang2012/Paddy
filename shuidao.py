@@ -27,7 +27,7 @@ from tensorflow.keras.callbacks import TensorBoard
 import random
 from tensorflow.keras.models import load_model
 
-from lib.FRNetTestCopy import *
+from lib.FRNet import *
 
 # number of class type
 n_label = 1
