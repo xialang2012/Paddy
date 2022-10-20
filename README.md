@@ -1,4 +1,5 @@
-# Implementation of FR-Net
+# Implementation of 
+[A full resolution deep learning network for paddy rice mapping using Landsat data](https://www.sciencedirect.com/science/article/pii/S0924271622002672)
 
     1. Requirements
 
@@ -10,3 +11,6 @@ b.GDAL
 
     2.Run
 ```python shuidao.py```
+
+
+
