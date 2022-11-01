@@ -17,6 +17,6 @@ Training dataset locates in the folder of dataset. For each image, 1 indicates p
 
 For better visualization, ArcGIS is suggested to open the image, and Layer Properties -> Symbology -> Unique values should be employed. One demo is show below.
 
-
+![demo image](images/demo.png)
 
 
