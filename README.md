@@ -3,19 +3,21 @@
 
     1. Requirements
 
-We sugget to use the Conda to set the environment.  
-a.Tensorflow > 2.6  
-b.GDAL
+  (a). Tensorflow/Keras > 2.6  
+  (b). GDAL
 
-    
+We suggest using Conda to set the environment.<br><br>
 
     2.Run
 ```python shuidao.py```
 
-    3.Dataset
-Training dataset locates in the folder of dataset. For each image, 1 indicates paddy, 0 indicates non paddy, and 3 means background which should be masked when you generate the training samples, e.g. size of 256*256. 
+We will upload some training samples so anyone downloads the codes and run them directly.<br><br>
 
-For better visualization, ArcGIS is suggested to open the image, and Layer Properties -> Symbology -> Unique values should be employed. One demo is show below.
+    3.Dataset
+The training dataset locates in the folder of the dataset. For each image, 1 indicates paddy, 0 indicates nonpaddy, and 3 means background which should be masked when you generate the training samples, e.g. size of 256*256. 
+
+For better visualization, ArcGIS is suggested to open the image, and Layer Properties -> Symbology -> Unique values should be employed. One demo is shown below.
+
 
 ![demo image](images/demo.jpg)
 
