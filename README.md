@@ -1,3 +1,6 @@
+# Updating April 27, 2024
+Implementation codes of FS-Net and the training samples of Landsat data are underway 
+
 # Implementation of 
 [A full resolution deep learning network for paddy rice mapping using Landsat data](https://www.sciencedirect.com/science/article/pii/S0924271622002672)
 
