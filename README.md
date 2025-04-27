@@ -1,4 +1,4 @@
-# Updating April 27, 2024
+# Updating April 27, 2025
 Implementation codes of FS-Net and the training samples of Landsat data are underway 
 
 
